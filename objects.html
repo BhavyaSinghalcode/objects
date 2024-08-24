@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <img src="https://via.placeholder.com/350x200" alt="Card Image">
+          <h2 id="headi"></h2>
+          <p id="contact"></p>
+          
+          <p id="emai"></p>
+          <h6 id="profile"><a></a></h6>
+          <button onclick="skillsfunction()">Know my skills</button>
+          <div id="skillslist">
+          </div>
+        </div>
+    
+    </div>
+    <script>
+        var student={
+            name:"Bhavya",
+            contact_number:"7840020603",
+            email:"bhavyasinghal123@gmail.com",
+            linkleden:"https://www.linkedin.com/in/bhavya-singhal-745835223/"
+        };
+    var skills = ["Scratch", "HTML", "CSS", "Bootstrap", "JavaScript", "Python", "Microsoft Office", "Mathematical Skills"];
+
+function skillsFunction() {
+    //document.getElementById("skillslist")
+    var skillslist = document.getElementById("skillslist");
+    skillslist.innerHTML = "<h4>Skills:</h4><ul>" + skills.map(skill => "<li>" + skill + "</li>").join('') + "</ul>";
+}
+        document.getElementById("headi").innerHTML=student.name
+        document.getElementById("contact").innerHTML=student.contact_number
+        document.getElementById("emai").innerHTML=student.email
+        var profileElement = document.getElementById("profile");
+        profileElement.innerHTML = '<a href="' + student.linkedin + '" target="_blank">LinkedIn Profile</a>';
+    </script>
+</body>
+</html>
